@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Installed Apps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .appItem {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .appFileName {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .uninstallButton {
+            cursor: pointer;
+            color: #FF0000;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Installed Apps</h1>
+
+    <div id="installedAppsContainer">
+        <h2>My Installed Apps:</h2>
+        <div id="appsList"></div>
+    </div>
+
+    <script>
+        // Function to display the list of installed apps
+        function displayInstalledApps() {
+            const appsListElement = document.getElementById("appsList");
+            const keys = Object.keys(localStorage);
+
+            if (keys.length > 0) {
+                keys.forEach(key => {
+                    if (key !== "installedAppFileName") {
+                        const appContent = localStorage.getItem(key);
+                        const fileName = localStorage.getItem(key + "FileName");
+
+                        if (appContent && fileName) {
+                            const appItem = document.createElement("div");
+                            appItem.classList.add("appItem");
+                            appItem.innerHTML = `
+                                <span class="appFileName">${fileName.replace(".html", "")}</span>
+                                <span class="uninstallButton" data-key="${key}">Uninstall</span>
+                            `;
+                            appsListElement.appendChild(appItem);
+
+                            appItem.querySelector(".appFileName").addEventListener("click", function() {
+                                const newTab = window.open();
+                                newTab.document.open();
+                                newTab.document.write(appContent);
+                                newTab.document.close();
+                            });
+
+                            appItem.querySelector(".uninstallButton").addEventListener("click", function() {
+                                const appKey = this.getAttribute("data-key");
+                                localStorage.removeItem(appKey);
+                                localStorage.removeItem(appKey + "FileName");
+                                appsListElement.removeChild(appItem);
+                            });
+                        }
+                    }
+                });
+            } else {
+                appsListElement.innerHTML = "<p>No installed apps found.</p>";
+            }
+        }
+
+        // Display the list of installed apps when the page loads
+        displayInstalledApps();
+    </script>
+</body>
+</html>

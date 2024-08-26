@@ -1,0 +1,321 @@
+<button id="backButton">Go Back</button>
+<style>
+#backButton {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+font-size: 16px;
+}
+</style>
+<script>document.getElementById("backButton").addEventListener("click", function() {
+window.history.go(-1);
+});</script>
+<!--Font Script-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      margin-bottom: 15px;
+    }
+    select {
+      font-size: 16px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Script -->
+  <script>
+    function changeFont() {
+      const fontSelect = document.getElementById('fontSelect');
+      const selectedFont = fontSelect.value;
+
+      // Store the selected font in localStorage
+      localStorage.setItem('selectedFont', selectedFont);
+
+      // Apply the font to the entire page
+      document.body.style.fontFamily = selectedFont;
+
+      // Update the font style on linked pages
+      const links = document.querySelectorAll('a');
+      for (const link of links) {
+        link.style.fontFamily = selectedFont;
+      }
+    }
+
+    // Read the selected font from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const storedFont = localStorage.getItem('selectedFont');
+      if (storedFont) {
+        document.body.style.fontFamily = storedFont;
+        // Set the selected font in the dropdown (optional)
+        const fontSelect = document.getElementById('fontSelect');
+        fontSelect.value = storedFont;
+      }
+    });
+  </script>
+</body>
+</html>
+<!--Font script ended--><button id="backButton">Go Back</button>
+<style>
+#backButton {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+font-size: 16px;
+}
+</style>
+<script>document.getElementById("backButton").addEventListener("click", function() {
+window.history.go(-1);
+});</script>
+<!--Font Script-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      margin-bottom: 15px;
+    }
+    select {
+      font-size: 16px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Script -->
+  <script>
+    function changeFont() {
+      const fontSelect = document.getElementById('fontSelect');
+      const selectedFont = fontSelect.value;
+
+      // Store the selected font in localStorage
+      localStorage.setItem('selectedFont', selectedFont);
+
+      // Apply the font to the entire page
+      document.body.style.fontFamily = selectedFont;
+
+      // Update the font style on linked pages
+      const links = document.querySelectorAll('a');
+      for (const link of links) {
+        link.style.fontFamily = selectedFont;
+      }
+    }
+
+    // Read the selected font from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const storedFont = localStorage.getItem('selectedFont');
+      if (storedFont) {
+        document.body.style.fontFamily = storedFont;
+        // Set the selected font in the dropdown (optional)
+        const fontSelect = document.getElementById('fontSelect');
+        fontSelect.value = storedFont;
+      }
+    });
+  </script>
+</body>
+</html>
+<!--Font script ended--><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Command Prompt</title>
+  <style>
+   body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f0f0f0;
+  color: #000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+#output {
+  background-color: #000;
+  color: #00ff00;
+  padding: 10px;
+  margin: 0;
+  height: 80%;
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.prompt {
+  color: #00ff00;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+input[type="text"] {
+  background-color: #000;
+  color: #00ff00;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+input[type="text"]::selection {
+  background-color: #00ff00;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <pre id="output">Welcome to the BJH OS Command Prompt!<br>Type 'help' to see available commands.</pre>
+    <div class="input-container">
+      <span class="prompt">>></span>
+      <input type="text" id="input" autofocus>
+    </div>
+  </div>
+
+  <script>
+    const outputElement = document.getElementById("output");
+    const inputElement = document.getElementById("input");
+    const promptText = '>> ';
+
+    inputElement.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const userInput = inputElement.value.trim();
+        inputElement.value = '';
+        displayOutput(`${promptText}${userInput}\n`);
+        processCommand(userInput);
+      }
+    });
+
+    function displayOutput(text) {
+      outputElement.textContent += text;
+      outputElement.scrollTop = outputElement.scrollHeight;
+    }
+
+    function command_help() {
+      const helpText = `Available commands:\nhelp - Show available commands (more commands are added with updates)\ndate - Show the current date\ntime - Show the current time\ncalc - Open calculator\nsfwupd - Open software update\nabtdev - Open about device\nnotr - Open number to roman converter\nhtmcmp - Html Compiler\nipchk - Ip address checker\ntts - Text To Speech Converter\nbatstats - For Battery Percetage and it stats\nagecalc - Age Calculator\nexit - Exit the command prompt\n`;
+      displayOutput(helpText);
+    }
+
+    function command_date() {
+      const currentDate = new Date().toLocaleDateString();
+      displayOutput(`${currentDate}\n`);
+    }
+
+    function command_time() {
+      const currentTime = new Date().toLocaleTimeString();
+      displayOutput(`${currentTime}\n`);
+    }
+
+    function processCommand(command) {
+      if (command === 'help') {
+        command_help();
+      } else if (command === 'date') {
+        command_date();
+      } else if (command === 'time') {
+        command_time();
+      } else if (command === 'exit') {
+        displayOutput('Exiting command prompt.\n');
+      } else if (command === 'calc') {
+        // Open calculator.html
+        window.location.href = "calculator.html";
+      } else if (command === 'sfwupd') {
+        // Open software update.html
+        window.location.href = "software update.html";
+      } else if (command === 'abtdev') {
+        // Open about device.html
+        window.location.href = "about device.html";
+      } else if (command === 'notr') {
+        // Open number to roman converter.html
+        window.location.href = "number to roman converter.html";
+      }  
+else if (command === 'htmcmp') {
+        
+        window.location.href = "Html compiler.html";
+      } 
+else if (command === 'ipchk') {
+        
+        window.location.href = "Cmd Apps/ip address checker.html";
+      } 
+else if (command === 'tts') {
+        
+        window.location.href = "Cmd Apps/text to speech converter.html";
+      } 
+else if (command === 'batstats') {
+        
+        window.location.href = "Battery status.html";
+      } 
+else if (command === 'agecalc') {
+        
+        window.location.href = "Cmd Apps/age calculator.html";
+      }
+
+
+else {
+        displayOutput(`Command not recognized. Type 'help' to see available commands.\n`);
+      }
+    }
+  </script>
+
+</body>
+</html>

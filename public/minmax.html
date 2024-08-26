@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Styles/minmax.css">
+</head>
+<body>
+<div class="draggable-window" id="draggableWindow">
+  <div class="draggable-window-header">
+    <div class="draggable-window-title">Draggable Window</div>
+    <div class="draggable-window-buttons">
+      <button id="minimizeButton">-</button>
+      <button id="maximizeButton">⛶</button>
+      <button id="restoreButton">◻</button>
+      <button id="closeButton">X</button>
+    </div>
+  </div>
+  <div class="draggable-content">
+    <!--Font Script-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      margin-bottom: 15px;
+    }
+    select {
+      font-size: 16px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Script -->
+  <script>
+    function changeFont() {
+      const fontSelect = document.getElementById('fontSelect');
+      const selectedFont = fontSelect.value;
+
+      // Store the selected font in localStorage
+      localStorage.setItem('selectedFont', selectedFont);
+
+      // Apply the font to the entire page
+      document.body.style.fontFamily = selectedFont;
+
+      // Update the font style on linked pages
+      const links = document.querySelectorAll('a');
+      for (const link of links) {
+        link.style.fontFamily = selectedFont;
+      }
+    }
+
+    // Read the selected font from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const storedFont = localStorage.getItem('selectedFont');
+      if (storedFont) {
+        document.body.style.fontFamily = storedFont;
+        // Set the selected font in the dropdown (optional)
+        const fontSelect = document.getElementById('fontSelect');
+        fontSelect.value = storedFont;
+      }
+    });
+  </script>
+</body>
+</html>
+<!--Font script ended--><!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        .calculator {
+            width: 320px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        input[type="button"] {
+            width: 60px;
+            height: 40px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        #result {
+            font-size: 24px;
+            padding: 10px;
+            width: 100%;
+            text-align: right;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="result">0</div>
+        <div class="row">
+            <input type="button" value="7" onclick="appendToResult('7')">
+            <input type="button" value="8" onclick="appendToResult('8')">
+            <input type="button" value="9" onclick="appendToResult('9')">
+            <input type="button" value="/" onclick="appendToResult('/')">
+            <input type="button" value="AC" onclick="clearResult()">
+        </div>
+        <div class="row">
+            <input type="button" value="4" onclick="appendToResult('4')">
+            <input type="button" value="5" onclick="appendToResult('5')">
+            <input type="button" value="6" onclick="appendToResult('6')">
+            <input type="button" value="*" onclick="appendToResult('*')">
+            <input type="button" value="C" onclick="clearEntry()">
+        </div>
+        <div class="row">
+            <input type="button" value="1" onclick="appendToResult('1')">
+            <input type="button" value="2" onclick="appendToResult('2')">
+            <input type="button" value="3" onclick="appendToResult('3')">
+            <input type="button" value="-" onclick="appendToResult('-')">
+            <input type="button" value="DEL" onclick="deleteLastCharacter()">
+        </div>
+        <div class="row">
+            <input type="button" value="0" onclick="appendToResult('0')">
+            <input type="button" value="." onclick="appendToResult('.')">
+            <input type="button" value="+" onclick="appendToResult('+')">
+            <input type="button" value="=" onclick="calculate()">
+        </div>
+        <div class="row">
+            <input type="button" value="sin" onclick="applyFunction('sin')">
+            <input type="button" value="cos" onclick="applyFunction('cos')">
+            <input type="button" value="tan" onclick="applyFunction('tan')">
+            <input type="button" value="^" onclick="appendToResult('**')">
+            <input type="button" value="sqrt" onclick="applyFunction('sqrt')">
+        </div>
+    </div>
+
+    <script>
+        let result = document.getElementById('result');
+
+        function appendToResult(value) {
+            if (result.innerHTML === '0') {
+                result.innerHTML = value;
+            } else {
+                result.innerHTML += value;
+            }
+        }
+
+        function clearResult() {
+            result.innerHTML = '0';
+        }
+
+        function clearEntry() {
+            result.innerHTML = '0';
+        }
+
+        function deleteLastCharacter() {
+            result.innerHTML = result.innerHTML.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                result.innerHTML = eval(result.innerHTML);
+            } catch (error) {
+                result.innerHTML = 'Error';
+            }
+        }
+
+        function applyFunction(func) {
+            const value = parseFloat(result.innerHTML);
+            switch (func) {
+                case 'sin':
+                    result.innerHTML = Math.sin(value);
+                    break;
+                case 'cos':
+                    result.innerHTML = Math.cos(value);
+                    break;
+                case 'tan':
+                    result.innerHTML = Math.tan(value);
+                    break;
+                case 'sqrt':
+                    result.innerHTML = Math.sqrt(value);
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
+
+  </div>
+</div>
+
+    <script src="Scripts/minmax.js"></script>
+
+</body>
+</html>
