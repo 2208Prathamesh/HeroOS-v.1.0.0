@@ -8,7 +8,7 @@
 # HERO OS 
 
 ## Overview
-HeroOS is an open source Operating System for managing and operating Windows inspired os online OS Server and applications built using Node.js with Express and Dockerode. [Click here to Contact.](https://skyport.privt.xyz/)
+HeroOS is an open source Operating System for managing and operating Windows inspired os online OS Server and applications built using Node.js with Express and Dockerode. For Contact and Query: [heropixelnetwork@gmail.com](heropixelnetwork@gmail.com)
 
 ## Installation
 You can read our documentation at [skyport.dev](https://skyport.dev)
