@@ -1,4 +1,4 @@
-# HeroOS v1.0.0
+# HeroOS v1.0.1
 
 ![\[!image\](https://i.imgur.com/SU7QypZ.png)](https://i.imgur.com/SU7QypZ.png)
 
@@ -8,7 +8,7 @@
 # HERO OS 
 
 ## Overview
-Skyport is an open source panel for managing and operating game servers and applications built using Node.js with Express and Dockerode. [Click here to join our Discord.](https://skyport.privt.xyz/)
+HeroOS is an open source Operating System for managing and operating Windows inspired os online OS Server and applications built using Node.js with Express and Dockerode. [Click here to Contact.](https://skyport.privt.xyz/)
 
 ## Installation
 You can read our documentation at [skyport.dev](https://skyport.dev)
@@ -17,12 +17,13 @@ You can read our documentation at [skyport.dev](https://skyport.dev)
 Edit the `index.js` file in the root directory to set up the application settings including the database connection and port.
 
 ## Usage
-Navigate to `http://localhost:<port>` to access the Skyport Panel. Log in with your user credentials to manage and view instances.
+Navigate to `http://localhost:<port>` to access the Hero OS. Log in with your user credentials to manage and view instances.
 
 ## Contributing
 Contributions are welcome. Please fork the repository and submit pull requests with your proposed changes.
 
 ## License
-(c) 2024 Heropixel Network and Prathamesh. All rights reserved. Licensed under the MIT License.
+(c) 2024 Prathamesh Barbole, Heropixel Network and HeroOS Contributors . All rights reserved. Licensed under the MIT License.
 
  
+
