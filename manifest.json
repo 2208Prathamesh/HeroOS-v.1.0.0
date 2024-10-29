@@ -1,0 +1,22 @@
+{
+    "name": "Hero OS",
+    "short_name": "HeroOS", 
+    "description": "Hero OS, Powered by Heropixel Network based on the Windows Operating System. Developed by Prathamesh Barbole",
+    "start_url": ".",
+    "theme_color": "#ff7b00",
+    "background_color": "#000000",
+    "display": "standalone",
+    "icons":[
+      {
+        "src":"public/Assets/PWA/winRipen-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"public/Assets/PWA/winRipen-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  
+  }
