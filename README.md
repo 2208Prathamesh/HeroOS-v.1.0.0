@@ -11,7 +11,7 @@
 HeroOS is an open source Operating System for managing and operating Windows inspired  online OS Server and applications built using Node.js with Express and Dockerode. For Contact and Query: [heropixelnetwork@gmail.com](mailto:heropixelnetwork@gmail.com)
 
 ## Installation
-You can read our documentation at [docs.HeroOS]()
+You can read our documentation at [heropixel.fun](heropixel.fun)
 
 ## Configuration
 Edit the `index.js` file in the root directory to set up the application settings including the database connection and port.
