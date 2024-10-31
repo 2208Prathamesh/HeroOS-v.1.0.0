@@ -12,6 +12,7 @@ HeroOS is an open source Operating System for managing and operating Windows ins
 
 ## Installation
 You can read our documentation at [heropixel.fun](http://heropixel.fun/)
+For HeroOS Online Available at [heropixel.fun/os](http://heropixel.fun/os) and [heropixel.fun/heroos](http://heropixel.fun/heroos)
 
 ## Configuration
 Edit the `index.js` file in the root directory to set up the application settings including the database connection and port.
