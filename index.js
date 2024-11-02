@@ -13,7 +13,7 @@
 
 // server ip and port change here,(ip not mendatory)
 const domain = "os.heropixel.fun";
-const port = 3001;
+const port = 25565;
 
 
 const express = require('express');
